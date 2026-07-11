@@ -1,0 +1,165 @@
+/* Core Page Layout */
+body {
+  background-color: #ffb3b3; 
+  margin: 0;
+  padding: 20px 40px;
+  font-family: 'Pixelify Sans', sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Header Banner Layout */
+.header-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+}
+
+.title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-title {
+  font-size: 3rem;
+  color: #000000;
+  margin: 0;
+}
+
+/* --- THE PIXEL ART CAT ANIMATION --- */
+.cat-animate {
+  width: 32px;  
+  height: 32px;
+  background-image: url('Box3.png'); /* Reads Box3.png directly from your main folder */
+  background-size: 128px 32px;       
+  image-rendering: pixelated;        
+  animation: play-cat 1.2s steps(4) infinite; 
+}
+
+.cat-right {
+  transform: scaleX(-1); 
+}
+
+@keyframes play-cat {
+  from { background-position: 0px; }
+  to { background-position: -128px; }
+}
+
+/* Top Right Reset Button */
+.circle-btn {
+  background-color: #d1d5db; 
+  border: 2px solid #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.reset-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+}
+
+/* --- NEW: CUSTOM DUSTBIN BUTTON STYLE (Uses dustbin.png) --- */
+.custom-bin-btn {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 75px;
+  height: 75px;
+  background-image: url('dustbin.png'); /* Reads your custom dustbin image asset */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  image-rendering: pixelated; /* Keeps the pixel art sharp */
+  z-index: 10;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.custom-bin-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  filter: grayscale(100%); /* Visibly grays out the asset when input is empty */
+}
+
+.custom-bin-btn:not(:disabled):hover {
+  transform: scale(1.1); /* Slightly pops out when hovered */
+}
+
+/* --- TWO COLUMN WORKSPACE --- */
+.main-workspace {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Left Card: Instructions */
+.instructions-card {
+  background-color: #fff0f0; 
+  width: 25%;
+  min-width: 240px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.step {
+  color: #cc4444; 
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+/* Right Card: Notebook paper */
+.notebook-container {
+  width: 70%;
+  flex-grow: 1;
+}
+
+.paper-canvas {
+  background-image: url('notebook.png');       
+  background-repeat: no-repeat;       
+  background-size: 100% 100%; 
+  background-color: #ffffff;        
+  width: 100%;
+  height: 480px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  transform-origin: center bottom;
+}
+
+textarea {
+  font-family: 'Pixelify Sans', sans-serif; 
+  font-size: 22px;
+  line-height: 29px;   
+  padding: 42px 30px 30px 85px; /* Safely pushes your text typing cursor beyond your pink margin line asset */
+  color: #222222;
+  caret-color: #cc2222; /* Creates a clean red retro typing cursor */
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  resize: none;
+  outline: none;
+}

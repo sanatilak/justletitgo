@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just Let It Go!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header-banner">
+    <div class="title-wrap">
+      <div class="cat-animate cat-left"></div>
+      <h1 class="main-title">JUST LET IT GO!</h1>
+      <div class="cat-animate cat-right"></div>
+    </div>
+    <button id="reset-btn" class="circle-btn reset-btn" aria-label="Reset app">⟳</button>
+  </header>
+
+  <main class="main-workspace">
+    
+    <aside class="instructions-card">
+      <p class="step">Step 1: What is bothering you?</p>
+      <p class="step">Step 2: Type your feelings away on the paper</p>
+      <p class="step">Step 3: Click on the dustbin to trash it forever</p>
+      <p class="step">Step 4: Breathe in... Breathe out</p>
+    </aside>
+
+    <div class="notebook-container">
+      <div id="paper-page" class="paper-canvas">
+        <textarea id="note-input" placeholder="Type your feelings here... Let it all out."></textarea>
+      </div>
+    </div>
+
+  </main>
+
+  <button id="bin-trigger" class="custom-bin-btn" disabled aria-label="Throw away note"></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
